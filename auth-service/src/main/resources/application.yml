@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/tenalink?currentSchema=auth_service}
+    username: ${SPRING_DATASOURCE_USERNAME:tenalink}
+    password: ${SPRING_DATASOURCE_PASSWORD:tenalink}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    default-schema: auth_service
+    create-schemas: true
+server:
+  port: 8081
+jwt:
+  secret: ${JWT_SECRET:change-this-secret-change-this-secret-change-this-secret}
+  access-token-minutes: 60
+  refresh-token-days: 7

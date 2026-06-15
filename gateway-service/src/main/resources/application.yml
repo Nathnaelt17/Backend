@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: gateway-service
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: ${AUTH_SERVICE_URI:http://localhost:8081}
+          predicates:
+            - Path=/api/v1/auth/**
+          metadata:
+            public: true
+        - id: user-service
+          uri: ${USER_SERVICE_URI:http://localhost:8082}
+          predicates:
+            - Path=/api/v1/users/**
+        - id: medical-records-service
+          uri: ${MEDICAL_RECORDS_URI:http://localhost:8083}
+          predicates:
+            - Path=/api/v1/records/**
+        - id: appointment-service
+          uri: ${APPOINTMENT_URI:http://localhost:8084}
+          predicates:
+            - Path=/api/v1/appointments/**
+        - id: pharmacy-service
+          uri: ${PHARMACY_URI:http://localhost:8085}
+          predicates:
+            - Path=/api/v1/pharmacy/**
+        - id: admin-service
+          uri: ${ADMIN_URI:http://localhost:8086}
+          predicates:
+            - Path=/api/v1/admin/**
+server:
+  port: 8080
+jwt:
+  secret: ${JWT_SECRET:change-this-secret-change-this-secret-change-this-secret}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

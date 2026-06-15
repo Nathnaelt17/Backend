@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: admin-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/tenalink?currentSchema=admin_service}
+    username: ${SPRING_DATASOURCE_USERNAME:tenalink}
+    password: ${SPRING_DATASOURCE_PASSWORD:tenalink}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    default-schema: admin_service
+    create-schemas: true
+server:
+  port: 8086
