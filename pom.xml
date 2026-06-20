@@ -19,6 +19,7 @@
     <description>Domain-oriented microservices backend for centralized medical records</description>
 
     <modules>
+        <module>fayda-health-platform</module>
         <module>tenalink-common</module>
         <module>tenalink-security-common</module>
         <module>gateway-service</module>
@@ -69,6 +70,21 @@
             <dependency>
                 <groupId>com.tenalink</groupId>
                 <artifactId>tenalink-security-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tenalink</groupId>
+                <artifactId>fayda-health-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tenalink</groupId>
+                <artifactId>fayda-health-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tenalink</groupId>
+                <artifactId>fayda-health-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
