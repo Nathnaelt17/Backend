@@ -11,4 +11,8 @@ public class PatientEntity {
     @Column(nullable = false) private String dateOfBirth;
     @Column(nullable = false) private String gender;
     @Column(nullable = false) private String contactPhone;
+    private String bloodType;
+    @Column(columnDefinition = "text") private String allergies;
+    @Column(columnDefinition = "text") private String chronicConditions;
+    @Column(nullable = false) private java.time.Instant createdAt = java.time.Instant.now();
 }

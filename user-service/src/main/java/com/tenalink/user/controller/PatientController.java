@@ -57,6 +57,9 @@ public class PatientController {
         response.setDateOfBirth(patient.getDateOfBirth());
         response.setGender(patient.getGender());
         response.setContactPhone(patient.getContactPhone());
+        response.setBloodType(patient.getBloodType());
+        response.setAllergies(patient.getAllergies());
+        response.setChronicConditions(patient.getChronicConditions());
         return response;
     }
 

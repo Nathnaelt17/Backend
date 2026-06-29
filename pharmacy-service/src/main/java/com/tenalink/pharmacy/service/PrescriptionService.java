@@ -16,7 +16,8 @@ public class PrescriptionService {
         p.setPrescribedAt(req.getPrescribedAt()); p.setStatus("ACTIVE");
         return repo.save(p);
     }
-    public List<PrescriptionEntity> getByPatient(UUID patientId) { return repo.findByPatientId(patientId); }
+    public List<PrescriptionEntity> getByPatient(UUID patientId) { return repo.findByPatientIdOrderByPrescribedAtDesc(patientId); }
+    public List<PrescriptionEntity> getByDoctor(UUID doctorId) { return repo.findByDoctorIdOrderByPrescribedAtDesc(doctorId); }
     public void fulfill(UUID id) {
         PrescriptionEntity p = repo.findById(id).orElseThrow(() -> new RuntimeException("Not found"));
         p.setStatus("FULFILLED");
