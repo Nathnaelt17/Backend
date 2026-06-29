@@ -17,4 +17,5 @@ public class MedicalEventService {
         return repo.save(e);
     }
     public List<MedicalEventEntity> getTimeline(UUID patientId) { return repo.findByPatientIdOrderByTimestampDesc(patientId); }
+    public List<MedicalEventEntity> getDocuments(UUID patientId) { return repo.findByPatientIdAndEventTypeOrderByTimestampDesc(patientId, "DOCUMENT"); }
 }

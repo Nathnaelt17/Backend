@@ -12,4 +12,5 @@ public class MedicalEventController {
     public MedicalEventController(MedicalEventService service) { this.service = service; }
     @PostMapping public ResponseEntity<MedicalEventEntity> create(@RequestBody MedicalEventDto.CreateRequest req) { return ResponseEntity.ok(service.create(req)); }
     @GetMapping("/patient/{patientId}/timeline") public ResponseEntity<List<MedicalEventEntity>> getTimeline(@PathVariable UUID patientId) { return ResponseEntity.ok(service.getTimeline(patientId)); }
+    @GetMapping("/patient/{patientId}/documents") public ResponseEntity<List<MedicalEventEntity>> getDocuments(@PathVariable UUID patientId) { return ResponseEntity.ok(service.getDocuments(patientId)); }
 }
