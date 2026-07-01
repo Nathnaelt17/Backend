@@ -55,6 +55,9 @@ public class PatientEntity {
     @Column(name = "id_document_data")
     private byte[] idDocumentData;
 
+    @Column(name = "id_document_url")
+    private String idDocumentUrl;
+
     @Column(name = "id_document_name")
     private String idDocumentName;
 
