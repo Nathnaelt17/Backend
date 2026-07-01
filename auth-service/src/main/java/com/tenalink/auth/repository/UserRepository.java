@@ -7,5 +7,7 @@ import java.util.UUID;
 public interface UserRepository extends JpaRepository<UserEntity, UUID> {
     Optional<UserEntity> findByEmail(String email);
     Optional<UserEntity> findByFaydaId(String faydaId);
-    List<UserEntity> findByRole(String role);
+    List<UserEntity> findByRoleOrderByCreatedAtDesc(String role);
+    long countByRole(String role);
+    List<UserEntity> findAllByOrderByCreatedAtDesc();
 }
