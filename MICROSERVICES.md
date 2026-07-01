@@ -27,7 +27,7 @@ healthcare-platform/                    ← parent POM (this repo)
 
 To split into separate repos later:
 
-1. Publish `healthcare-common` as a versioned artifact (`0.1.0`).
+1. Publish `healthcare-common` as a versioned artifact (`0.1.0`).'
 2. Copy each `*-service` folder to its own Git repo with a standalone `pom.xml` (change parent to `spring-boot-starter-parent`).
 3. Add each service to CI/CD independently.
 

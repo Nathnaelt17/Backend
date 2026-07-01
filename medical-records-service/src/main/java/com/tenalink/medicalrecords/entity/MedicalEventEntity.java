@@ -7,7 +7,7 @@ import java.util.UUID;
 public class MedicalEventEntity {
     @Id @GeneratedValue(strategy = GenerationType.UUID) private UUID id;
     @Column(nullable = false) private UUID patientId;
-    @Column(nullable = false) private UUID hospitalId;
+    @Column(nullable = true)  private UUID hospitalId;   // optional – event may not be tied to a specific hospital
     @Column(nullable = false) private UUID authorId;
     @Column(nullable = false) private Instant timestamp;
     @Column(nullable = false) private String eventType;

@@ -12,5 +12,6 @@ public class PrescriptionController {
     public PrescriptionController(PrescriptionService service) { this.service = service; }
     @PostMapping public ResponseEntity<PrescriptionEntity> create(@RequestBody PrescriptionDto.CreateRequest req) { return ResponseEntity.ok(service.create(req)); }
     @GetMapping("/patient/{patientId}") public ResponseEntity<List<PrescriptionEntity>> getByPatient(@PathVariable UUID patientId) { return ResponseEntity.ok(service.getByPatient(patientId)); }
+    @GetMapping("/doctor/{doctorId}") public ResponseEntity<List<PrescriptionEntity>> getByDoctor(@PathVariable UUID doctorId) { return ResponseEntity.ok(service.getByDoctor(doctorId)); }
     @PutMapping("/{id}/fulfill") public ResponseEntity<Void> fulfill(@PathVariable UUID id) { service.fulfill(id); return ResponseEntity.ok().build(); }
 }

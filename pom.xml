@@ -25,6 +25,7 @@
         <module>appointment-service</module>
         <module>pharmacy-service</module>
         <module>admin-service</module>
+        <module>hospital-service</module>
     </modules>
 
     <properties>
